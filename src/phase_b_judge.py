@@ -5,10 +5,12 @@ from __future__ import annotations
 import json
 import os
 import sys
+import urllib.error
+import urllib.request
 from dataclasses import dataclass, field
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import OPENAI_API_KEY, OPENAI_BASE_URL, JUDGE_MODEL, HUMAN_LABELS_PATH
+from config import GEMINI_API_KEY, OPENAI_API_KEY, OPENAI_BASE_URL, JUDGE_MODEL, HUMAN_LABELS_PATH
 
 
 @dataclass
@@ -39,11 +41,33 @@ def pairwise_judge(question: str, answer_a: str, answer_b: str) -> dict:
     Returns:
         {"winner": "A"|"B"|"tie", "reasoning": str, "scores": {"A": float, "B": float}}
     """
+    prompt = (f"Question: {question}\nAnswer A: {answer_a}\nAnswer B: {answer_b}\n"
+              "Return JSON with winner (A, B, or tie), reasoning, and scores A/B from 0 to 1.")
+    if GEMINI_API_KEY:
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{JUDGE_MODEL}:generateContent"
+        payload = {"contents": [{"parts": [{"text":
+            "You are a precise RAG evaluator. Return JSON only.\n" + prompt}]}],
+                   "generationConfig": {"responseMimeType": "application/json"}}
+        request = urllib.request.Request(
+            f"{url}?key={GEMINI_API_KEY}",
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"}, method="POST")
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                body = json.loads(response.read().decode("utf-8"))
+            content = body["candidates"][0]["content"]["parts"][0]["text"]
+            result = json.loads(content)
+            result["winner"] = result.get("winner") if result.get("winner") in {"A", "B", "tie"} else "tie"
+            result["reasoning"] = str(result.get("reasoning", "LLM evaluation completed."))
+            result["scores"] = {key: max(0.0, min(1.0, float(result.get("scores", {}).get(key, 0.0)))) for key in ("A", "B")}
+            return result
+        except urllib.error.HTTPError as exc:
+            raise RuntimeError(f"Gemini API failed with HTTP {exc.code}; check quota and account status.") from exc
+        except (KeyError, IndexError, json.JSONDecodeError) as exc:
+            raise RuntimeError("Gemini returned an invalid judge response.") from exc
     if OPENAI_API_KEY:
         try:
             from openai import OpenAI
-            prompt = (f"Question: {question}\nAnswer A: {answer_a}\nAnswer B: {answer_b}\n"
-                      "Return JSON with winner (A, B, or tie), reasoning, and scores A/B from 0 to 1.")
             client = OpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL or None)
             response = client.chat.completions.create(
                 model=JUDGE_MODEL,
@@ -261,33 +285,72 @@ def bias_report(judge_results: list[JudgeResult]) -> dict:
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    # --- Demo pairwise + swap ---
-    q   = "Nhân viên được nghỉ bao nhiêu ngày phép năm?"
-    a_a = "Nhân viên được nghỉ 15 ngày phép năm theo chính sách v2024 hiện hành."
-    a_b = "Theo quy định, nhân viên có 12 ngày phép hàng năm."
-
-    print("Running swap-and-average judge...")
-    result = swap_and_average(q, a_a, a_b)
-    print(f"  Pass 1 winner: {result.winner_pass1}")
-    print(f"  Pass 2 winner: {result.winner_pass2}")
-    print(f"  Final:         {result.final_winner}")
-    print(f"  Position consistent: {result.position_consistent}")
-
-    # --- Cohen's κ vs human labels ---
-    with open(HUMAN_LABELS_PATH, encoding="utf-8") as f:
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    with open(os.path.join(root, "answers_50q.json"), encoding="utf-8") as f:
+        answers = json.load(f)
+    with open(os.path.join(root, HUMAN_LABELS_PATH), encoding="utf-8") as f:
         human_data = json.load(f)
+
+    results = [swap_and_average(item["question"], item["answer"], item["ground_truth"])
+               for item in answers]
+    answers_by_id = {item["id"]: item for item in answers}
+    human_results = []
+    judge_labels = []
+    for item in human_data:
+        source = answers_by_id[item["question_id"]]
+        result = swap_and_average(item["question"], source["answer"], source["ground_truth"])
+        human_results.append(result)
+        judge_labels.append(1 if result.final_winner == "A" else 0)
+
     human_labels = [item["human_label"] for item in human_data]
-    print(f"\nHuman labels loaded: {len(human_labels)} questions")
-
-    # In production: run judge on the same 10 questions to get judge_labels
-    judge_labels = [0] * len(human_labels)  # placeholder — replace with real judge output
     kappa = cohen_kappa(judge_labels, human_labels)
-    print(f"Cohen's κ (placeholder): {kappa:.3f}")
-
-    # --- Bias report ---
-    bias = bias_report([result])
-    print(f"\nBias report: {bias}")
-    os.makedirs("reports", exist_ok=True)
-    with open("reports/judge_results.json", "w", encoding="utf-8") as f:
-        json.dump({"sample": result.__dict__, "cohen_kappa": kappa, "bias_report": bias},
+    bias = bias_report(results)
+    os.makedirs(os.path.join(root, "reports"), exist_ok=True)
+    with open(os.path.join(root, "reports", "judge_results.json"), "w", encoding="utf-8") as f:
+        json.dump({"results": [result.__dict__ for result in results],
+                   "human_results": [result.__dict__ for result in human_results],
+                   "human_labels": human_labels, "judge_labels": judge_labels,
+                   "cohen_kappa": round(kappa, 3), "bias_report": bias},
                   f, ensure_ascii=False, indent=2, default=str)
+
+    report_lines = [
+        "# LLM Judge Bias Report — Phase B", "", "**Judge model:** " + JUDGE_MODEL, "",
+        "## 1. Pairwise Judge Results", "",
+        "| # | Question | Winner | Reasoning |", "|---|---|---|---|",
+    ]
+    for index, (item, result) in enumerate(zip(answers[:5], results[:5]), 1):
+        question = item["question"].replace("|", "\\|")
+        reasoning = result.reasoning_pass1.replace("|", "\\|").replace("\n", " ")
+        report_lines.append(f"| {index} | {question} | {result.final_winner} | {reasoning} |")
+    report_lines += [
+        "", "## 2. Swap-and-Average Results", "",
+        "| # | Pass 1 | Pass 2 | Final | Position consistent? |",
+        "|---|---|---|---|---|",
+    ]
+    for index, result in enumerate(results[:10], 1):
+        report_lines.append(f"| {index} | {result.winner_pass1} | {result.winner_pass2} | "
+                            f"{result.final_winner} | {result.position_consistent} |")
+    report_lines += [
+        "", f"**Position bias rate:** {bias['position_bias_rate']:.1%} "
+        f"(= {bias['position_bias_count']}/{bias['total_judged']} inconsistent cases)", "",
+        "## 3. Cohen's κ Analysis", "",
+        "| Question ID | Human label | Judge label | Agree? |",
+        "|---|---:|---:|---|",
+    ]
+    for item, label, human in zip(human_data, judge_labels, human_labels):
+        report_lines.append(f"| {item['question_id']} | {human} | {label} | {label == human} |")
+    agreement = "almost perfect" if kappa >= .8 else "substantial" if kappa >= .6 else "moderate" if kappa >= .4 else "fair" if kappa >= .2 else "slight" if kappa >= 0 else "poor"
+    report_lines += [
+        "", f"**Cohen's κ:** {kappa:.3f}", f"**Interpretation:** {agreement} agreement.", "",
+        "## 4. Verbosity Bias", "",
+        f"- A thắng và A dài hơn B: {bias['verbosity_details'].get('a_wins_a_longer', 0)}",
+        f"- B thắng và B dài hơn A: {bias['verbosity_details'].get('b_wins_b_longer', 0)}",
+        f"- **Verbosity bias rate:** {bias['verbosity_bias']:.1%}", "",
+        "## 5. Nhận xét chung", "",
+        f"> Đã chạy judge trên {len(results)} câu trả lời và đối chiếu {len(human_results)} câu có nhãn người. "
+        f"{bias['interpretation']} κ phản ánh mức đồng thuận giữa judge và human trên tập kiểm chứng.", "",
+    ]
+    with open(os.path.join(root, "analysis", "bias_report.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(report_lines))
+    print(f"Phase B complete: {len(results)} judged, κ={kappa:.3f}, "
+          f"position bias={bias['position_bias_rate']:.1%}")

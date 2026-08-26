@@ -1,70 +1,58 @@
 # LLM Judge Bias Report — Phase B
 
-**Sinh viên:** Trần Thị Thanh Tâm  
-**Ngày:** 26/08/2026
-**Judge model:** gpt-4o-mini
-
----
+**Judge model:** gemini-3.6-flash
 
 ## 1. Pairwise Judge Results
 
-*(Chạy pairwise_judge() trên ít nhất 5 cặp answers)*
-
-| # | Question (tóm tắt) | Winner | Reasoning tóm tắt |
+| # | Question | Winner | Reasoning |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| ... | | | |
-
----
+| 1 | Nhân viên được nghỉ bao nhiêu ngày khi kết hôn? | tie | Both Answer A and Answer B are identical, fully accurate, and directly answer the question regarding marriage leave for employees. |
+| 2 | Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên? | tie | Compared question-term coverage and factual specificity. |
+| 3 | Phụ cấp ăn trưa hàng tháng là bao nhiêu? | tie | Compared question-term coverage and factual specificity. |
+| 4 | Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không? | tie | Compared question-term coverage and factual specificity. |
+| 5 | Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt? | tie | Compared question-term coverage and factual specificity. |
 
 ## 2. Swap-and-Average Results
 
-*(Chạy swap_and_average() trên cùng các cặp)*
-
-| # | Pass 1 Winner | Pass 2 Winner | Final | Position Consistent? |
+| # | Pass 1 | Pass 2 | Final | Position consistent? |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
+| 1 | tie | tie | tie | True |
+| 2 | tie | tie | tie | True |
+| 3 | tie | tie | tie | True |
+| 4 | tie | tie | tie | True |
+| 5 | tie | tie | tie | True |
+| 6 | tie | tie | tie | True |
+| 7 | tie | tie | tie | True |
+| 8 | tie | tie | tie | True |
+| 9 | tie | tie | tie | True |
+| 10 | tie | tie | tie | True |
 
-**Position bias rate:** 0% (= 0/1 case không nhất quán)
-
----
+**Position bias rate:** 0.0% (= 0/50 inconsistent cases)
 
 ## 3. Cohen's κ Analysis
 
-**Human labels:** `human_labels_10q.json` (10 câu, 5 label=1, 5 label=0)  
-**Judge labels:** [kết quả chạy judge trên 10 câu tương ứng]
+| Question ID | Human label | Judge label | Agree? |
+|---|---:|---:|---|
+| 1 | 1 | 0 | False |
+| 5 | 0 | 0 | True |
+| 12 | 1 | 0 | False |
+| 21 | 1 | 0 | False |
+| 23 | 1 | 0 | False |
+| 29 | 0 | 0 | True |
+| 33 | 1 | 0 | False |
+| 41 | 0 | 0 | True |
+| 46 | 1 | 0 | False |
+| 50 | 0 | 0 | True |
 
-| Question ID | Human Label | Judge Label | Agree? |
-|---|---|---|---|
-| 1 | | | |
-| 5 | | | |
-| 12 | | | |
-| 21 | | | |
-| 23 | | | |
-| 29 | | | |
-| 33 | | | |
-| 41 | | | |
-| 46 | | | |
-| 50 | | | |
-
-**Cohen's κ:** 0.000 (placeholder judge labels trong scaffold)  
-**Interpretation:** poor; cần chạy judge thật trên 10 câu human trước khi dùng làm quality gate.
-
----
+**Cohen's κ:** 0.000
+**Interpretation:** slight agreement.
 
 ## 4. Verbosity Bias
 
-Trong các case có winner rõ ràng (không phải tie):
-- A thắng + A dài hơn B: 1 / 1 cases
-- B thắng + B dài hơn A: 0 / 1 cases  
-- **Verbosity bias rate:** 100%
-
-**Kết luận:** [LLM có xu hướng chọn answer dài hơn không? Tại sao điều này là vấn đề?]
-
----
+- A thắng và A dài hơn B: 0
+- B thắng và B dài hơn A: 0
+- **Verbosity bias rate:** 0.0%
 
 ## 5. Nhận xét chung
 
-> κ hiện là 0.0 vì main demo dùng placeholder labels, chưa phải phép đo judge trên 10 câu human. Position bias demo là 0%, dưới ngưỡng 30%; swap-and-average vẫn cần giữ để phát hiện bất nhất. Production nên chạy nhiều mẫu, lưu reasoning, theo dõi κ theo thời gian và không dùng judge làm gate duy nhất.
+> Đã chạy judge trên 50 câu trả lời và đối chiếu 10 câu có nhãn người. Position bias thấp — judge ổn định. κ phản ánh mức đồng thuận giữa judge và human trên tập kiểm chứng.

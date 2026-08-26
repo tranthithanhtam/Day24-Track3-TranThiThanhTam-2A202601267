@@ -7,7 +7,7 @@ load_dotenv()
 
 # --- API Keys ---
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "") or GEMINI_API_KEY
+OPENAI_API_KEY = GEMINI_API_KEY or os.getenv("OPENAI_API_KEY", "")
 OPENAI_BASE_URL = os.getenv(
 	"OPENAI_BASE_URL",
 	"https://generativelanguage.googleapis.com/v1beta/openai/" if GEMINI_API_KEY else "",
