@@ -48,6 +48,7 @@ def evaluate_ragas(questions: list[str], answers: list[str],
     from ragas import evaluate
     from ragas.metrics import (faithfulness, answer_relevancy,
                                context_precision, context_recall)
+    from ragas.run_config import RunConfig
     from datasets import Dataset
     from langchain_community.embeddings import HuggingFaceEmbeddings
     from langchain_openai import ChatOpenAI
@@ -63,7 +64,9 @@ def evaluate_ragas(questions: list[str], answers: list[str],
     result = evaluate(dataset, metrics=[faithfulness, answer_relevancy,
                                         context_precision, context_recall],
                       llm=llm, embeddings=embeddings,
-                      raise_exceptions=True)
+                      raise_exceptions=True,
+                      run_config=RunConfig(timeout=180, max_retries=1,
+                                           max_wait=5, max_workers=1))
     df = result.to_pandas()
 
     per_question = [

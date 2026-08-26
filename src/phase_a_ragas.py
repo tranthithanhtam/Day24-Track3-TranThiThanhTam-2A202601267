@@ -130,24 +130,34 @@ def run_ragas_50q(answers: list[dict]) -> list[RagasResult]:
         3. Kết hợp kết quả với distribution info từ answers list
         4. Return list[RagasResult]
     """
-    from src.m4_eval import evaluate_ragas
-    raw = evaluate_ragas(
-        [a["question"] for a in answers], [a["answer"] for a in answers],
-        [a.get("contexts", []) for a in answers], [a["ground_truth"] for a in answers],
-    )
     results = []
-    for answer, scored in zip(answers, raw.get("per_question", [])):
-        def get_score(name):
-            if isinstance(scored, dict):
-                return float(scored.get(name, 0.0))
-            return float(getattr(scored, name, 0.0))
-        results.append(RagasResult(
-            question_id=answer["id"], distribution=answer["distribution"],
-            question=answer["question"], answer=answer["answer"],
-            contexts=answer.get("contexts", []), ground_truth=answer["ground_truth"],
-            faithfulness=get_score("faithfulness"), answer_relevancy=get_score("answer_relevancy"),
-            context_precision=get_score("context_precision"), context_recall=get_score("context_recall"),
-        ))
+    from src.m4_eval import evaluate_ragas
+    batch_size = int(os.getenv("RAGAS_BATCH_SIZE", "5"))
+    if batch_size < 1:
+        raise ValueError("RAGAS_BATCH_SIZE must be at least 1")
+    for start in range(0, len(answers), batch_size):
+        batch = answers[start:start + batch_size]
+        print(f"  Evaluating batch {start // batch_size + 1}: "
+              f"questions {start + 1}-{start + len(batch)}")
+        raw = evaluate_ragas(
+            [a["question"] for a in batch], [a["answer"] for a in batch],
+            [a.get("contexts", []) for a in batch],
+            [a["ground_truth"] for a in batch],
+        )
+        for answer, scored in zip(batch, raw.get("per_question", [])):
+            def get_score(name):
+                if isinstance(scored, dict):
+                    return float(scored.get(name, 0.0))
+                return float(getattr(scored, name, 0.0))
+            results.append(RagasResult(
+                question_id=answer["id"], distribution=answer["distribution"],
+                question=answer["question"], answer=answer["answer"],
+                contexts=answer.get("contexts", []), ground_truth=answer["ground_truth"],
+                faithfulness=get_score("faithfulness"),
+                answer_relevancy=get_score("answer_relevancy"),
+                context_precision=get_score("context_precision"),
+                context_recall=get_score("context_recall"),
+            ))
     return results
 
 
