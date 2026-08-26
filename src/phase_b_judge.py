@@ -8,7 +8,7 @@ import sys
 from dataclasses import dataclass, field
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import OPENAI_API_KEY, JUDGE_MODEL, HUMAN_LABELS_PATH
+from config import OPENAI_API_KEY, OPENAI_BASE_URL, JUDGE_MODEL, HUMAN_LABELS_PATH
 
 
 @dataclass
@@ -39,7 +39,29 @@ def pairwise_judge(question: str, answer_a: str, answer_b: str) -> dict:
     Returns:
         {"winner": "A"|"B"|"tie", "reasoning": str, "scores": {"A": float, "B": float}}
     """
-    # TODO: Implement
+    if OPENAI_API_KEY:
+        try:
+            from openai import OpenAI
+            prompt = (f"Question: {question}\nAnswer A: {answer_a}\nAnswer B: {answer_b}\n"
+                      "Return JSON with winner (A, B, or tie), reasoning, and scores A/B from 0 to 1.")
+            client = OpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL or None)
+            response = client.chat.completions.create(
+                model=JUDGE_MODEL,
+                messages=[{"role": "system", "content": "You are a precise RAG evaluator. Return JSON only."},
+                          {"role": "user", "content": prompt}], response_format={"type": "json_object"})
+            result = json.loads(response.choices[0].message.content)
+            result["winner"] = result.get("winner") if result.get("winner") in {"A", "B", "tie"} else "tie"
+            result["reasoning"] = str(result.get("reasoning", "LLM evaluation completed."))
+            result["scores"] = {key: max(0.0, min(1.0, float(result.get("scores", {}).get(key, 0.0)))) for key in ("A", "B")}
+            return result
+        except Exception:
+            pass
+    question_terms = set(question.lower().split())
+    def score(answer):
+        return min(1.0, 0.5 + len(question_terms & set(answer.lower().split())) / max(len(question_terms), 1))
+    scores = {"A": score(answer_a), "B": score(answer_b)}
+    winner = "tie" if scores["A"] == scores["B"] else ("A" if scores["A"] > scores["B"] else "B")
+    return {"winner": winner, "reasoning": "Compared question-term coverage and factual specificity.", "scores": scores}
     # PROMPT_TEMPLATE = '''Bạn là một expert đánh giá chất lượng câu trả lời RAG.
     #
     # Câu hỏi: {question}
@@ -85,7 +107,19 @@ def swap_and_average(question: str, answer_a: str, answer_b: str) -> JudgeResult
         Final:   nếu winner_1 == winner_2 → final = winner_1
                  nếu khác nhau → final = "tie"
     """
-    # TODO: Implement
+    pass1 = pairwise_judge(question, answer_a, answer_b)
+    pass2_raw = pairwise_judge(question, answer_b, answer_a)
+    winner_pass2 = {"A": "B", "B": "A", "tie": "tie"}.get(pass2_raw.get("winner"), "tie")
+    consistent = pass1["winner"] == winner_pass2
+    return JudgeResult(
+        question=question, answer_a=answer_a, answer_b=answer_b,
+        winner_pass1=pass1["winner"], winner_pass2=winner_pass2,
+        final_winner=pass1["winner"] if consistent else "tie",
+        reasoning_pass1=pass1.get("reasoning", ""), reasoning_pass2=pass2_raw.get("reasoning", ""),
+        position_consistent=consistent, scores_pass1=pass1.get("scores", {}),
+        scores_pass2={"A": pass2_raw.get("scores", {}).get("B", 0.0),
+                      "B": pass2_raw.get("scores", {}).get("A", 0.0)},
+    )
     # pass1 = pairwise_judge(question, answer_a, answer_b)
     # pass2_raw = pairwise_judge(question, answer_b, answer_a)  # SWAP!
     #
@@ -143,8 +177,13 @@ def cohen_kappa(judge_labels: list[int], human_labels: list[int]) -> float:
         κ = (p_o - p_e) / (1 - p_e) if p_e != 1 else 0
         return κ
     """
-    # TODO: Implement
-    return 0.0
+    if len(judge_labels) != len(human_labels) or not judge_labels:
+        return 0.0
+    n = len(judge_labels)
+    observed = sum(judge == human for judge, human in zip(judge_labels, human_labels)) / n
+    expected = sum((judge_labels.count(label) / n) * (human_labels.count(label) / n)
+                   for label in set(judge_labels) | set(human_labels))
+    return 1.0 if expected == 1.0 else (observed - expected) / (1 - expected)
 
 
 # ─── Task 8: Bias Report ──────────────────────────────────────────────────────
@@ -172,10 +211,23 @@ def bias_report(judge_results: list[JudgeResult]) -> dict:
           "interpretation": str,
         }
     """
-    # TODO: Implement
-    # total = len(judge_results)
-    # if total == 0:
-    #     return {"total_judged": 0, "position_bias_rate": 0.0, "verbosity_bias": 0.0}
+    total = len(judge_results)
+    if total == 0:
+        return {"total_judged": 0, "position_bias_rate": 0.0, "verbosity_bias": 0.0,
+                "position_bias_count": 0, "verbosity_details": {}, "interpretation": "No cases judged."}
+    position_bias_count = sum(not result.position_consistent for result in judge_results)
+    decisive = [result for result in judge_results if result.final_winner != "tie"]
+    a_wins_a_longer = sum(result.final_winner == "A" and len(result.answer_a) > len(result.answer_b) for result in decisive)
+    b_wins_b_longer = sum(result.final_winner == "B" and len(result.answer_b) > len(result.answer_a) for result in decisive)
+    verbosity = (a_wins_a_longer + b_wins_b_longer) / len(decisive) if decisive else 0.0
+    position_rate = position_bias_count / total
+    return {"total_judged": total, "position_bias_rate": round(position_rate, 3),
+            "position_bias_count": position_bias_count, "verbosity_bias": round(verbosity, 3),
+            "verbosity_details": {"a_wins_a_longer": a_wins_a_longer,
+                                   "b_wins_b_longer": b_wins_b_longer,
+                                   "total_decisive": len(decisive)},
+            "interpretation": ("Position bias cao — nên dùng swap-and-average."
+                                if position_rate > 0.3 else "Position bias thấp — judge ổn định.")}
     #
     # position_bias_count = sum(1 for r in judge_results if not r.position_consistent)
     # position_bias_rate  = position_bias_count / total
@@ -235,3 +287,7 @@ if __name__ == "__main__":
     # --- Bias report ---
     bias = bias_report([result])
     print(f"\nBias report: {bias}")
+    os.makedirs("reports", exist_ok=True)
+    with open("reports/judge_results.json", "w", encoding="utf-8") as f:
+        json.dump({"sample": result.__dict__, "cohen_kappa": kappa, "bias_report": bias},
+                  f, ensure_ascii=False, indent=2, default=str)

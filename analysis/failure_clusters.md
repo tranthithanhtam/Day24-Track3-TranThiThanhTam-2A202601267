@@ -1,7 +1,7 @@
 # Failure Cluster Analysis — Phase A
 
-**Sinh viên:** [Họ Tên]  
-**Ngày:** [Ngày làm lab]
+**Sinh viên:** Trần Thị Thanh Tâm  
+**Ngày:** 26/08/2026
 
 ---
 
@@ -9,11 +9,11 @@
 
 | Metric | factual | multi_hop | adversarial |
 |---|---|---|---|
-| faithfulness | ? | ? | ? |
-| answer_relevancy | ? | ? | ? |
-| context_precision | ? | ? | ? |
-| context_recall | ? | ? | ? |
-| **avg_score** | ? | ? | ? |
+| faithfulness | 1.0 | 1.0 | 1.0 |
+| answer_relevancy | 1.0 | 1.0 | 1.0 |
+| context_precision | 1.0 | 1.0 | 1.0 |
+| context_recall | 1.0 | 1.0 | 1.0 |
+| **avg_score** | 1.0 | 1.0 | 1.0 |
 
 ---
 
@@ -42,13 +42,12 @@
 
 ## 4. Dominant Failure Analysis
 
-**Dominant distribution:** [factual / multi_hop / adversarial]  
-**Dominant metric:** [faithfulness / answer_relevancy / context_precision / context_recall]
+**Dominant distribution:** factual (tie in offline fixture)  
+**Dominant metric:** faithfulness (tie in offline fixture)
 
 **Lý do phân tích:**
 
-> [Viết 3-5 câu giải thích tại sao distribution này hay bị failure, 
->  tại sao metric này thấp nhất trong corpus HR policy tiếng Việt]
+> Kết quả offline có điểm bằng nhau vì fixture dùng ground truth làm answer và context, nên không thể kết luận factual thực sự yếu hơn. Matrix dùng faithfulness và factual làm tie-break. Khi có API/RAGAS thật, cần thay fixture bằng answers sinh từ pipeline để phân tích version conflict và retrieval failure có ý nghĩa.
 
 ---
 

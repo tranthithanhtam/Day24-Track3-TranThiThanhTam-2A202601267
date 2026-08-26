@@ -1,7 +1,7 @@
 # LLM Judge Bias Report — Phase B
 
-**Sinh viên:** [Họ Tên]  
-**Ngày:** [Ngày làm lab]  
+**Sinh viên:** Trần Thị Thanh Tâm  
+**Ngày:** 26/08/2026
 **Judge model:** gpt-4o-mini
 
 ---
@@ -27,7 +27,7 @@
 | 1 | | | | |
 | 2 | | | | |
 
-**Position bias rate:** ?% (= số case NOT consistent / tổng)
+**Position bias rate:** 0% (= 0/1 case không nhất quán)
 
 ---
 
@@ -49,17 +49,17 @@
 | 46 | | | |
 | 50 | | | |
 
-**Cohen's κ:** ?  
-**Interpretation:** [poor / slight / fair / moderate / substantial / almost perfect]
+**Cohen's κ:** 0.000 (placeholder judge labels trong scaffold)  
+**Interpretation:** poor; cần chạy judge thật trên 10 câu human trước khi dùng làm quality gate.
 
 ---
 
 ## 4. Verbosity Bias
 
 Trong các case có winner rõ ràng (không phải tie):
-- A thắng + A dài hơn B: ? / ? cases
-- B thắng + B dài hơn A: ? / ? cases  
-- **Verbosity bias rate:** ?%
+- A thắng + A dài hơn B: 1 / 1 cases
+- B thắng + B dài hơn A: 0 / 1 cases  
+- **Verbosity bias rate:** 100%
 
 **Kết luận:** [LLM có xu hướng chọn answer dài hơn không? Tại sao điều này là vấn đề?]
 
@@ -67,8 +67,4 @@ Trong các case có winner rõ ràng (không phải tie):
 
 ## 5. Nhận xét chung
 
-> [Viết 3-5 câu nhận xét:
->  - κ > 0.6 chưa? LLM judge đáng tin không?
->  - Position bias đáng lo ngại không (>30%)?
->  - Swap-and-average có thực sự giúp ích không?
->  - Trong môi trường production, nên dùng judge như thế nào?]
+> κ hiện là 0.0 vì main demo dùng placeholder labels, chưa phải phép đo judge trên 10 câu human. Position bias demo là 0%, dưới ngưỡng 30%; swap-and-average vẫn cần giữ để phát hiện bất nhất. Production nên chạy nhiều mẫu, lưu reasoning, theo dõi κ theo thời gian và không dùng judge làm gate duy nhất.

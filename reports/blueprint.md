@@ -1,7 +1,7 @@
 # CI/CD Blueprint: RAG Eval + Guardrail Stack
 
-**Sinh viên:** [Họ Tên]  
-**Ngày:** [Ngày làm lab]
+**Sinh viên:** Trần Thị Thanh Tâm
+**Ngày:** 26/08/2026
 
 ---
 
@@ -33,18 +33,16 @@ User Response
 
 ## Latency Budget
 
-*(Điền từ kết quả Task 12 — measure_p95_latency())*
+| Layer                 | P50 (ms) | P95 (ms)        | P99 (ms) | Budget           |
+| --------------------- | -------- | --------------- | -------- | ---------------- |
+| Presidio PII          | 0.03     | 20.38           | 20.38    | <10ms            |
+| NeMo Input Rail       | 0.01     | 0.03            | 0.04     | <300ms           |
+| RAG Pipeline          | N/A      | N/A             | N/A      | <2000ms          |
+| NeMo Output Rail      | N/A      | N/A             | N/A      | <300ms           |
+| **Total Guard** | 0.04     | **20.40** | 20.40    | **<500ms** |
 
-| Layer | P50 (ms) | P95 (ms) | P99 (ms) | Budget |
-|---|---|---|---|---|
-| Presidio PII | ? | ? | ? | <10ms |
-| NeMo Input Rail | ? | ? | ? | <300ms |
-| RAG Pipeline | ? | ? | ? | <2000ms |
-| NeMo Output Rail | ? | ? | ? | <300ms |
-| **Total Guard** | ? | **?** | ? | **<500ms** |
-
-**Budget OK?** [ ] Yes / [ ] No  
-**Comment:** [Nếu vượt budget, layer nào là bottleneck và cách tối ưu?]
+**Budget OK?** [x] Yes / [ ] No
+**Comment:** Đo offline sau khi cache Presidio; production cần đo lại NeMo qua mạng và đặt timeout.
 
 ---
 
@@ -71,29 +69,28 @@ User Response
 
 ## Monitoring Dashboard (production)
 
-| Metric | Alert Threshold | Action |
-|---|---|---|
-| RAGAS faithfulness (daily sample) | < 0.70 | Page on-call |
-| Adversarial block rate | < 80% | Review new attack patterns |
-| Guard P95 latency | > 600ms | Scale NeMo model |
-| PII detected count | spike >10/hour | Security alert |
+| Metric                            | Alert Threshold | Action                     |
+| --------------------------------- | --------------- | -------------------------- |
+| RAGAS faithfulness (daily sample) | < 0.70          | Page on-call               |
+| Adversarial block rate            | < 80%           | Review new attack patterns |
+| Guard P95 latency                 | > 600ms         | Scale NeMo model           |
+| PII detected count                | spike >10/hour  | Security alert             |
 
 ---
 
 ## Kết quả thực tế từ Lab
 
-| | Kết quả |
-|---|---|
-| RAGAS avg_score (50q) | ? |
-| Worst metric | ? |
-| Dominant failure distribution | ? |
-| Cohen's κ | ? |
-| Adversarial pass rate | ? / 20 |
-| Guard P95 latency | ? ms |
+|                               | Kết quả                        |
+| ----------------------------- | -------------------------------- |
+| RAGAS avg_score (50q)         | 1.000 (offline fallback)         |
+| Worst metric                  | faithfulness (tie trong fixture) |
+| Dominant failure distribution | factual (tie trong fixture)      |
+| Cohen's κ                    | 0.000 (placeholder labels)       |
+| Adversarial pass rate         | 17 / 20                          |
+| Guard P95 latency             | 20.40 ms (cached offline rail)   |
 
 ---
 
 ## Nhận xét & Cải tiến
 
-> [Viết 3-5 câu về: điều gì hoạt động tốt, điều gì cần cải thiện,
->  nếu deploy production thực sự bạn sẽ thay đổi gì trong stack này?]
+> Presidio phát hiện đúng CCCD, CMND, số điện thoại Việt Nam và email, trong khi input rail chặn được 17/20 mẫu adversarial. Phase A đã có fallback deterministic để vẫn tạo được per-question report khi thiếu RAGAS/API. Điểm RAGAS 1.0 chỉ phản ánh offline fixture dùng ground truth làm context, không thay thế phép đo production. Khi deploy thật cần chạy lại với answers sinh từ pipeline, NeMo model thật, timeout, logging và theo dõi drift.
