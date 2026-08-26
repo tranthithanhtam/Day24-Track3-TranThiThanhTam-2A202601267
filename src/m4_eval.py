@@ -6,7 +6,8 @@ import os, sys, json
 from dataclasses import dataclass
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import TEST_SET_PATH
+from config import (TEST_SET_PATH, OPENAI_API_KEY, OPENAI_BASE_URL,
+                    JUDGE_MODEL, EMBEDDING_MODEL)
 
 METRIC_NAMES = ["faithfulness", "answer_relevancy", "context_precision", "context_recall"]
 
@@ -41,63 +42,44 @@ def _safe_float(value) -> float:
 def evaluate_ragas(questions: list[str], answers: list[str],
                    contexts: list[list[str]], ground_truths: list[str]) -> dict:
     """Run RAGAS evaluation."""
-    # RAGAS cần OPENAI_API_KEY và Python 3.11+ → wrap try/except để pipeline
-    # vẫn chạy được end-to-end khi thiếu key.
-    try:
-        from ragas import evaluate
-        from ragas.metrics import (faithfulness, answer_relevancy,
-                                   context_precision, context_recall)
-        from datasets import Dataset
+    if not OPENAI_API_KEY:
+        raise RuntimeError("OPENAI_API_KEY/Groq key is required for real RAGAS evaluation.")
 
-        dataset = Dataset.from_dict({
-            "question": questions, "answer": answers,
-            "contexts": contexts, "ground_truth": ground_truths,
-        })
-        result = evaluate(dataset, metrics=[faithfulness, answer_relevancy,
-                                            context_precision, context_recall])
-        df = result.to_pandas()
+    from ragas import evaluate
+    from ragas.metrics import (faithfulness, answer_relevancy,
+                               context_precision, context_recall)
+    from datasets import Dataset
+    from langchain_community.embeddings import HuggingFaceEmbeddings
+    from langchain_openai import ChatOpenAI
 
-        per_question = [
-            EvalResult(
-                question=row["question"],
-                answer=row["answer"],
-                contexts=list(row["contexts"]),
-                ground_truth=row["ground_truth"],
-                faithfulness=_safe_float(row.get("faithfulness", 0.0)),
-                answer_relevancy=_safe_float(row.get("answer_relevancy", 0.0)),
-                context_precision=_safe_float(row.get("context_precision", 0.0)),
-                context_recall=_safe_float(row.get("context_recall", 0.0)),
-            )
-            for _, row in df.iterrows()
-        ]
+    dataset = Dataset.from_dict({
+        "question": questions, "answer": answers,
+        "contexts": contexts, "ground_truth": ground_truths,
+    })
+    llm = ChatOpenAI(model=JUDGE_MODEL, api_key=OPENAI_API_KEY,
+                     base_url=OPENAI_BASE_URL or None, temperature=0, n=1)
+    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+    answer_relevancy.strictness = 1
+    result = evaluate(dataset, metrics=[faithfulness, answer_relevancy,
+                                        context_precision, context_recall],
+                      llm=llm, embeddings=embeddings,
+                      raise_exceptions=True)
+    df = result.to_pandas()
 
-        n = max(len(per_question), 1)
-        aggregate = {
-            m: sum(getattr(r, m) for r in per_question) / n
-            for m in METRIC_NAMES
-        }
-        return {**aggregate, "per_question": per_question}
-
-    except Exception as e:
-        print(f"  ⚠️  RAGAS evaluation failed: {e}; using deterministic fallback")
-        per_question = []
-        for question, answer, question_contexts, ground_truth in zip(
-                questions, answers, contexts, ground_truths):
-            answer_terms = set(answer.lower().split())
-            truth_terms = set(ground_truth.lower().split())
-            overlap = len(answer_terms & truth_terms) / max(len(truth_terms), 1)
-            context_text = " ".join(question_contexts).lower()
-            context_overlap = len(truth_terms & set(context_text.split())) / max(len(truth_terms), 1)
-            per_question.append(EvalResult(
-                question=question, answer=answer, contexts=question_contexts,
-                ground_truth=ground_truth, faithfulness=round(min(1.0, context_overlap), 4),
-                answer_relevancy=round(min(1.0, overlap), 4),
-                context_precision=round(min(1.0, context_overlap), 4),
-                context_recall=round(min(1.0, context_overlap), 4),
-            ))
-        count = max(len(per_question), 1)
-        return {m: sum(getattr(item, m) for item in per_question) / count
-                for m in METRIC_NAMES} | {"per_question": per_question}
+    per_question = [
+        EvalResult(
+            question=row["question"], answer=row["answer"],
+            contexts=list(row["contexts"]), ground_truth=row["ground_truth"],
+            faithfulness=_safe_float(row.get("faithfulness", 0.0)),
+            answer_relevancy=_safe_float(row.get("answer_relevancy", 0.0)),
+            context_precision=_safe_float(row.get("context_precision", 0.0)),
+            context_recall=_safe_float(row.get("context_recall", 0.0)),
+        )
+        for _, row in df.iterrows()
+    ]
+    n = max(len(per_question), 1)
+    return {**{m: sum(getattr(r, m) for r in per_question) / n
+               for m in METRIC_NAMES}, "per_question": per_question}
 
 
 def failure_analysis(eval_results: list[EvalResult], bottom_n: int = 10) -> list[dict]:

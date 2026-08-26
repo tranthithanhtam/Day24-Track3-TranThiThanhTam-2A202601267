@@ -72,7 +72,8 @@ def pairwise_judge(question: str, answer_a: str, answer_b: str) -> dict:
             response = client.chat.completions.create(
                 model=JUDGE_MODEL,
                 messages=[{"role": "system", "content": "You are a precise RAG evaluator. Return JSON only."},
-                          {"role": "user", "content": prompt}], response_format={"type": "json_object"})
+                          {"role": "user", "content": prompt}],
+                response_format={"type": "json_object"}, max_tokens=500)
             result = json.loads(response.choices[0].message.content)
             result["winner"] = result.get("winner") if result.get("winner") in {"A", "B", "tie"} else "tie"
             result["reasoning"] = str(result.get("reasoning", "LLM evaluation completed."))

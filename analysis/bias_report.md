@@ -1,16 +1,16 @@
 # LLM Judge Bias Report — Phase B
 
-**Judge model:** gemini-3.6-flash
+**Judge model:** openai/gpt-oss-20b
 
 ## 1. Pairwise Judge Results
 
 | # | Question | Winner | Reasoning |
 |---|---|---|---|
-| 1 | Nhân viên được nghỉ bao nhiêu ngày khi kết hôn? | tie | Both Answer A and Answer B are identical, fully accurate, and directly answer the question regarding marriage leave for employees. |
-| 2 | Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên? | tie | Compared question-term coverage and factual specificity. |
-| 3 | Phụ cấp ăn trưa hàng tháng là bao nhiêu? | tie | Compared question-term coverage and factual specificity. |
+| 1 | Nhân viên được nghỉ bao nhiêu ngày khi kết hôn? | tie | Both answers are identical and provide the same correct information. |
+| 2 | Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên? | tie | Both answers are identical, so there is no winner. |
+| 3 | Phụ cấp ăn trưa hàng tháng là bao nhiêu? | tie | Both Answer A and Answer B provide the same information: the monthly lunch allowance is 1,000,000 VND and is paid with the salary. Since they are identical and both contain the same correct statement, neither is superior, resulting in a tie. |
 | 4 | Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không? | tie | Compared question-term coverage and factual specificity. |
-| 5 | Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt? | tie | Compared question-term coverage and factual specificity. |
+| 5 | Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt? | tie | Both answers give the same correct information that a purchase over 50 million VND requires CEO approval. |
 
 ## 2. Swap-and-Average Results
 
