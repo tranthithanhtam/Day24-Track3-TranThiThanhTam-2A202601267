@@ -46,7 +46,7 @@ User Response
 
 ---
 
-## CI/CD Gates (phải pass trước khi merge to main)
+## CI/CD Gates 
 
 ```yaml
 # .github/workflows/rag_eval.yml
