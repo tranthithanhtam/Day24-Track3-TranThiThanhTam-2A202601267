@@ -1,0 +1,1183 @@
+{
+  "results": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer_a": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "answer_b": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and provide the same correct information.",
+      "reasoning_pass2": "Both answers are identical and correctly state that employees receive 3 paid working days off for marriage, which are not deducted from annual leave.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+      "answer_a": "Hạn mức bảo hiểm sức khỏe PVI cho nhân viên là 200.000.000 VNĐ/năm, bao gồm nội trú, ngoại trú và nha khoa.",
+      "answer_b": "Hạn mức bảo hiểm sức khỏe PVI cho nhân viên là 200.000.000 VNĐ/năm, bao gồm nội trú, ngoại trú và nha khoa.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical, so there is no winner.",
+      "reasoning_pass2": "Both answers A and B are identical in content, providing the same claim that the health insurance limit for PVI employees is 200,000,000 VND per year, including inpatient, outpatient, and dental coverage. Since they are exactly the same, neither is better nor worse.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Phụ cấp ăn trưa hàng tháng là bao nhiêu?",
+      "answer_a": "Phụ cấp ăn trưa là 1.000.000 VNĐ/tháng, chi trả cùng kỳ lương.",
+      "answer_b": "Phụ cấp ăn trưa là 1.000.000 VNĐ/tháng, chi trả cùng kỳ lương.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B provide the same information: the monthly lunch allowance is 1,000,000 VND and is paid with the salary. Since they are identical and both contain the same correct statement, neither is superior, resulting in a tie.",
+      "reasoning_pass2": "Both answers give the same amount (1,000,000 VND per month) and the same payment timing (paid with the same pay period), which aligns with the standard policy for the lunch allowance. Hence, neither answer is better than the other.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+      "answer_a": "KHÔNG cho cả hai. Mentor và buddy phải là hai người khác nhau. Quản lý trực tiếp không được làm mentor hoặc buddy.",
+      "answer_b": "KHÔNG cho cả hai. Mentor và buddy phải là hai người khác nhau. Quản lý trực tiếp không được làm mentor hoặc buddy.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Compared question-term coverage and factual specificity.",
+      "reasoning_pass2": "Both answers are identical and correctly state that the mentor and buddy must be different people and that a direct manager cannot serve as a mentor or buddy. Therefore neither answer is better.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer_a": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "answer_b": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers give the same correct information that a purchase over 50 million VND requires CEO approval.",
+      "reasoning_pass2": "Both answers are identical and correctly state that orders over 50,000,000 VNĐ require CEO approval.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+      "answer_a": "Theo quy chế chi trả lương, thông tin lương được phân loại là dữ liệu Bí mật (cấp 3), cấm chia sẻ với đồng nghiệp. Phải mã hóa khi truyền và hạn chế truy cập theo need-to-know.",
+      "answer_b": "Theo quy chế chi trả lương, thông tin lương được phân loại là dữ liệu Bí mật (cấp 3), cấm chia sẻ với đồng nghiệp. Phải mã hóa khi truyền và hạn chế truy cập theo need-to-know.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, providing the same classification information for salary data. Therefore, there is no difference in correctness or quality between the two answers, resulting in a tie.",
+      "reasoning_pass2": "Both answers are identical in content and accuracy, therefore neither answer is superior. The evaluation criteria are met equally by both responses.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nghỉ phép không lương 20 ngày cần ai phê duyệt?",
+      "answer_a": "Nghỉ từ 16-30 ngày không lương cần phê duyệt của Giám đốc điều hành (CEO). Lưu ý: nghỉ trên 14 ngày không lương, nhân viên phải tự đóng phần bảo hiểm của mình.",
+      "answer_b": "Nghỉ từ 16-30 ngày không lương cần phê duyệt của Giám đốc điều hành (CEO). Lưu ý: nghỉ trên 14 ngày không lương, nhân viên phải tự đóng phần bảo hiểm của mình.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical and correctly state that unpaid leave of 20 days requires approval from the CEO (Giám đốc điều hành). Therefore both are equally correct.",
+      "reasoning_pass2": "Compared question-term coverage and factual specificity.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi cha hoặc mẹ mất?",
+      "answer_a": "Nhân viên được nghỉ 3 ngày làm việc có lương khi cha mẹ mất (tang lễ). Không trừ vào phép năm.",
+      "answer_b": "Nhân viên được nghỉ 3 ngày làm việc có lương khi cha mẹ mất (tang lễ). Không trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly state that employees are entitled to 3 paid working days off for the death of a parent, which is not deducted from annual leave. Therefore, they tie.",
+      "reasoning_pass2": "Both answers are identical.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nam nhân viên được nghỉ bao nhiêu ngày khi vợ sinh con?",
+      "answer_a": "Nam nhân viên được nghỉ 5 ngày làm việc liên tục khi vợ sinh con, không trừ vào phép năm.",
+      "answer_b": "Nam nhân viên được nghỉ 5 ngày làm việc liên tục khi vợ sinh con, không trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content, stating that male employees are entitled to 5 consecutive working days of leave for their wife's childbirth, not deducted from annual leave. Therefore, neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical text, giving the same information about the number of days a male employee can take leave for the birth of a child. Therefore, neither answer is superior; they tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên chính thức được phép làm việc từ xa tối đa bao nhiêu ngày một tuần?",
+      "answer_a": "Nhân viên chính thức được phép làm việc từ xa tối đa 2 ngày/tuần. Lịch WFH phải được quản lý trực tiếp phê duyệt vào thứ Hai đầu tuần.",
+      "answer_b": "Nhân viên chính thức được phép làm việc từ xa tối đa 2 ngày/tuần. Lịch WFH phải được quản lý trực tiếp phê duyệt vào thứ Hai đầu tuần.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, correctly stating that official employees are allowed to work remotely up to 2 days per week and that WFH schedules must be approved by the direct manager on the first Monday of the week. Since there is no difference in correctness or content, the evaluation is a tie.",
+      "reasoning_pass2": "Both answers are identical, stating that employees are allowed to work remotely up to 2 days per week, which matches the question.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "VPN có bắt buộc không khi làm việc từ xa (WFH)?",
+      "answer_a": "Có, kết nối VPN WireGuard (AES-256) là BẮT BUỘC khi làm việc từ xa theo chính sách WFH v2.0 và VPN v1.3.",
+      "answer_b": "Có, kết nối VPN WireGuard (AES-256) là BẮT BUỘC khi làm việc từ xa theo chính sách WFH v2.0 và VPN v1.3.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answer A and answer B are identical in content and correctness, so neither has an advantage.",
+      "reasoning_pass2": "Both answers are identical in content, so neither provides a superior response.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    },
+    {
+      "question": "Thưởng Tết tối thiểu cho nhân viên chính thức có từ 6 tháng trở lên là bao nhiêu?",
+      "answer_a": "Nhân viên chính thức có thời gian làm việc từ 6 tháng trở lên được thưởng Tết tối thiểu 1 tháng lương. Nhân viên dưới 6 tháng được hưởng pro-rata theo số tháng làm việc thực tế.",
+      "answer_b": "Nhân viên chính thức có thời gian làm việc từ 6 tháng trở lên được thưởng Tết tối thiểu 1 tháng lương. Nhân viên dưới 6 tháng được hưởng pro-rata theo số tháng làm việc thực tế.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical, providing the correct information that permanent employees with 6 months or more receive a minimum Tet bonus of 1 month’s salary. Since there is no difference in content or correctness between the two, the evaluation is a tie.",
+      "reasoning_pass2": "Both answers A and B are identical, correctly stating that the minimum Tet bonus for official employees with 6 months or more of service is 1 month’s salary, with pro‑rated bonuses for those with less than 6 months. Thus there is no difference in correctness.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Đánh giá hiệu suất diễn ra mấy lần một năm và vào tháng nào?",
+      "answer_a": "Đánh giá hiệu suất diễn ra 2 lần/năm: tháng 6 (giữa năm, dùng để điều chỉnh mục tiêu) và tháng 12 (cuối năm, dùng để xét tăng lương và thưởng).",
+      "answer_b": "Đánh giá hiệu suất diễn ra 2 lần/năm: tháng 6 (giữa năm, dùng để điều chỉnh mục tiêu) và tháng 12 (cuối năm, dùng để xét tăng lương và thưởng).",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly state that performance evaluations occur twice a year, in June and December.",
+      "reasoning_pass2": "Both answers are identical in content, structure, and detail, providing the same information about the frequency and timing of performance evaluations. Therefore, neither answer has an advantage over the other.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    },
+    {
+      "question": "Nhân viên nghỉ ốm cần nộp giấy tờ gì và trong bao nhiêu ngày làm việc?",
+      "answer_a": "Phải nộp giấy xác nhận y tế (giấy khám bệnh hoặc giấy ra viện) trong vòng 3 ngày làm việc kể từ ngày quay lại. Nếu không có giấy tờ hợp lệ, ngày nghỉ bị trừ vào phép năm.",
+      "answer_b": "Phải nộp giấy xác nhận y tế (giấy khám bệnh hoặc giấy ra viện) trong vòng 3 ngày làm việc kể từ ngày quay lại. Nếu không có giấy tờ hợp lệ, ngày nghỉ bị trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, providing the same information regarding required documents (a medical certificate) and the 3-day working period. Consequently, neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical content and are equally accurate and complete.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Tạm ứng dưới 5 triệu cần ai phê duyệt? Từ 5 triệu trở lên thì sao?",
+      "answer_a": "Tạm ứng dưới 5.000.000 VNĐ chỉ cần Trưởng phòng phê duyệt. Từ 5.000.000 VNĐ trở lên cần thêm phê duyệt của Kế toán trưởng.",
+      "answer_b": "Tạm ứng dưới 5.000.000 VNĐ chỉ cần Trưởng phòng phê duyệt. Từ 5.000.000 VNĐ trở lên cần thêm phê duyệt của Kế toán trưởng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly state that reimbursements below 5,000,000 VNĐ require only the department head’s approval, while those of 5,000,000 VNĐ or more also require the chief accountant’s approval.",
+      "reasoning_pass2": "Both answers contain exactly the same content, so neither is superior.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    },
+    {
+      "question": "Tài khoản VPN bị khóa tự động sau bao nhiêu ngày không hoạt động?",
+      "answer_a": "Tài khoản VPN tự động bị khóa sau 60 ngày không hoạt động. Để kích hoạt lại cần gửi ticket IT kèm xác nhận quản lý trực tiếp, thời gian xử lý 1-2 ngày làm việc.",
+      "answer_b": "Tài khoản VPN tự động bị khóa sau 60 ngày không hoạt động. Để kích hoạt lại cần gửi ticket IT kèm xác nhận quản lý trực tiếp, thời gian xử lý 1-2 ngày làm việc.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and fully answer the question. Therefore, they tie.",
+      "reasoning_pass2": "Both answers A and B are identical in content and correctness, providing the same information about the VPN account lock policy and reactivation process. Therefore, neither answer is superior, resulting in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Phụ cấp điện thoại dành cho những cấp bậc nào và mức bao nhiêu?",
+      "answer_a": "Cấp Manager trở lên: 500.000 VNĐ/tháng. Cấp Lead: 300.000 VNĐ/tháng. Các cấp bậc khác (Junior, Senior) không có phụ cấp điện thoại.",
+      "answer_b": "Cấp Manager trở lên: 500.000 VNĐ/tháng. Cấp Lead: 300.000 VNĐ/tháng. Các cấp bậc khác (Junior, Senior) không có phụ cấp điện thoại.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and fully correct.",
+      "reasoning_pass2": "Both Answer A and Answer B provide identical information regarding phone allowances for Manager and above (500,000 VNĐ/month), Lead (300,000 VNĐ/month), and no allowance for Junior or Senior levels. Since they are exactly the same, neither answer is superior, resulting in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Cơ cấu điểm đánh giá hiệu suất gồm những thành phần nào và tỷ lệ ra sao?",
+      "answer_a": "KPI cá nhân chiếm 70% tổng điểm (do quản lý trực tiếp đánh giá). Peer review chiếm 30% (do 3-5 đồng nghiệp đánh giá về hợp tác, giao tiếp và chuyên môn).",
+      "answer_b": "KPI cá nhân chiếm 70% tổng điểm (do quản lý trực tiếp đánh giá). Peer review chiếm 30% (do 3-5 đồng nghiệp đánh giá về hợp tác, giao tiếp và chuyên môn).",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answer A and Answer B are identical, containing the same content and structure. Therefore, neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both answers are identical and fully answer the question by listing the components (KPI cá nhân 70% and Peer review 30%) and their percentages.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Thời gian thử việc tiêu chuẩn và tối đa (dành cho Manager trở lên) là bao nhiêu ngày?",
+      "answer_a": "Thời gian thử việc tiêu chuẩn là 60 ngày. Đối với vị trí Manager trở lên, có thể kéo dài đến 90 ngày.",
+      "answer_b": "Thời gian thử việc tiêu chuẩn là 60 ngày. Đối với vị trí Manager trở lên, có thể kéo dài đến 90 ngày.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and contain the same information. They address the question and provide consistent details for standard and maximum trial periods for Manager and above.",
+      "reasoning_pass2": "Both Answer A and Answer B provide identical and accurate information regarding the standard probation period of 60 days and the maximum extension of up to 90 days for Manager or higher positions. Since there is no difference between the answers, the result is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Phụ cấp đi lại tối đa mỗi tháng là bao nhiêu và điều kiện để được hưởng là gì?",
+      "answer_a": "Tối đa 2.000.000 VNĐ/tháng, dành cho nhân viên có tần suất công tác ngoài văn phòng trên 8 ngày/tháng. Phải có chứng từ hợp lệ (vé xe, hóa đơn xăng, Grab receipt).",
+      "answer_b": "Tối đa 2.000.000 VNĐ/tháng, dành cho nhân viên có tần suất công tác ngoài văn phòng trên 8 ngày/tháng. Phải có chứng từ hợp lệ (vé xe, hóa đơn xăng, Grab receipt).",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content and accurately answer the question regarding the maximum monthly travel allowance and the conditions for eligibility.",
+      "reasoning_pass2": "Both answers A and B are identical and correctly state that the maximum monthly travel allowance is 2,000,000 VND, applicable to employees with more than 8 workdays outside the office per month and requiring valid documentation (vehicle ticket, fuel receipt, Grab receipt). Since the content, format, and details match perfectly, the evaluation results in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer_a": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "answer_b": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical, providing the same information and calculation for the number of annual leave days and salary range for a Senior employee with 9 years of service. Hence neither answer is superior to the other.",
+      "reasoning_pass2": "Both answers provide identical information: 18 days of annual leave (15 base + 3 senior days for 9 years of tenure) and a salary range of 20-35 million VND per month for a Senior employee (P3-P4). As they match and align with the assumed policy v2024, no single answer is superior.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "answer_a": "Laptop 30 triệu nằm trong khoảng 5-50 triệu nên cần Giám đốc phòng ban (Director) phê duyệt. Cần đính kèm ít nhất 3 báo giá (trên 10 triệu). Mua sắm thiết bị CNTT cần xác nhận cấu hình kỹ thuật từ phòng CNTT trước khi đề xuất.",
+      "answer_b": "Laptop 30 triệu nằm trong khoảng 5-50 triệu nên cần Giám đốc phòng ban (Director) phê duyệt. Cần đính kèm ít nhất 3 báo giá (trên 10 triệu). Mua sắm thiết bị CNTT cần xác nhận cấu hình kỹ thuật từ phòng CNTT trước khi đề xuất.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B contain identical content, providing the same information about approval hierarchy, required quotes, and IT confirmation. Since there is no difference in accuracy or completeness, the evaluation results in a tie.",
+      "reasoning_pass2": "Compared question-term coverage and factual specificity.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.9,
+        "B": 0.9
+      }
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+      "answer_a": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "answer_b": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical statements. They both correctly state that the employee must commit to working at least one year after the training, and that leaving after only 8 months requires full repayment of the 25,000,000 VND sponsorship. Since there is no difference in content or correctness, the result is a tie.",
+      "reasoning_pass2": "Both provided answers (A and B) are identical in content, stating that the employee must work at least one year after completing the training and that leaving after eight months requires repayment of 100% of the 25 million VND cost. Without additional context or contractual details, it is unclear whether the 100% repayment clause applies. Consequently, neither answer can be definitively deemed correct or incorrect based solely on the information given. Therefore, the evaluation results in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer_a": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày: phí 2%/tháng trên 15.000.000 VNĐ, tính pro-rata = 2% × 15.000.000 × (5/30) ≈ 50.000 VNĐ.",
+      "answer_b": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày: phí 2%/tháng trên 15.000.000 VNĐ, tính pro-rata = 2% × 15.000.000 × (5/30) ≈ 50.000 VNĐ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly calculate the penalty as 50,000 VND.",
+      "reasoning_pass2": "Both answers correctly calculate the late fee: 2% monthly on 15,000,000 VNĐ prorated for 5 days (≈50,000 VNĐ).",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "answer_a": "Junior cao nhất là 20.000.000 VNĐ/tháng. Lương thử việc = 85% × 20.000.000 = 17.000.000 VNĐ/tháng.",
+      "answer_b": "Junior cao nhất là 20.000.000 VNĐ/tháng. Lương thử việc = 85% × 20.000.000 = 17.000.000 VNĐ/tháng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correct, so they tie.",
+      "reasoning_pass2": "Both answers are identical and equally correct",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên vừa kết hôn và cùng tuần đó có con kết hôn. Tổng số ngày nghỉ đặc biệt có lương là bao nhiêu?",
+      "answer_a": "Kết hôn bản thân: 3 ngày. Con kết hôn: 1 ngày. Tổng: 4 ngày làm việc có lương, tất cả không trừ vào phép năm.",
+      "answer_b": "Kết hôn bản thân: 3 ngày. Con kết hôn: 1 ngày. Tổng: 4 ngày làm việc có lương, tất cả không trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers correctly state that an employee who just got married receives 3 paid special leave days, and the employee’s child’s wedding grants an additional 1 paid special leave day, totaling 4 paid leave days. Since both answers are identical and accurate, the result is a tie.",
+      "reasoning_pass2": "Both answers correctly state that the employee gets 3 days of paid leave for his own marriage and 1 day of paid leave for his child’s marriage, totaling 4 days. No discrepancy between the answers.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.0,
+        "B": 0.0
+      }
+    },
+    {
+      "question": "Nhân viên có thâm niên 7 năm theo v2024 được nghỉ bao nhiêu ngày phép? Nếu bị trừ thêm 4 ngày ốm không có giấy y tế thì còn lại bao nhiêu?",
+      "answer_a": "Phép năm v2024: 15 ngày cơ bản + 2 ngày thâm niên (7÷3=2) = 17 ngày. Sau khi bị trừ 4 ngày ốm không giấy y tế: 17 - 4 = 13 ngày phép còn lại.",
+      "answer_b": "Phép năm v2024: 15 ngày cơ bản + 2 ngày thâm niên (7÷3=2) = 17 ngày. Sau khi bị trừ 4 ngày ốm không giấy y tế: 17 - 4 = 13 ngày phép còn lại.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B provide the same correct calculation: 15 basic days + 2 seniority days = 17 total days, minus 4 days for sick without medical certificate leaves 13 days. Since both answers are identical and correct, the result is a tie.",
+      "reasoning_pass2": "Both Answer A and Answer B provide the same correct calculation: 15 basic days + 2 service days (7 ÷ 3 = 2) equals 17 days, minus 4 days of illness without medical certificate leaves 13 days remaining. Thus both answers are correct and tied.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên cấp Lead nhận tổng phụ cấp hàng tháng (ăn trưa + điện thoại) là bao nhiêu?",
+      "answer_a": "Phụ cấp ăn trưa: 1.000.000 VNĐ. Phụ cấp điện thoại cấp Lead: 300.000 VNĐ. Tổng: 1.300.000 VNĐ/tháng.",
+      "answer_b": "Phụ cấp ăn trưa: 1.000.000 VNĐ. Phụ cấp điện thoại cấp Lead: 300.000 VNĐ. Tổng: 1.300.000 VNĐ/tháng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers provide the same correct total of 1,300,000 VND, which is the sum of a 1,000,000 VND lunch allowance and a 300,000 VND phone allowance for a Lead-level employee.",
+      "reasoning_pass2": "Both answers provide identical calculations for lunch and phone allowances totaling 1.3M VND, matching the expected monthly allowance for a Lead staff member. Since they are the same, there is no difference between them.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên tạm ứng 8 triệu, chưa thanh toán sau 30 ngày (quá hạn 15 ngày). Ai phê duyệt khoản này và phí phạt là bao nhiêu?",
+      "answer_a": "Phê duyệt: 8 triệu (≥5 triệu) cần Trưởng phòng + Kế toán trưởng. Phí phạt quá hạn 15 ngày: 2%/tháng × 8.000.000 × (15/30) = 80.000 VNĐ. Không được tạm ứng mới cho đến khi hoàn ứng.",
+      "answer_b": "Phê duyệt: 8 triệu (≥5 triệu) cần Trưởng phòng + Kế toán trưởng. Phí phạt quá hạn 15 ngày: 2%/tháng × 8.000.000 × (15/30) = 80.000 VNĐ. Không được tạm ứng mới cho đến khi hoàn ứng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answer A and answer B provide identical and correct information: approval requires the manager and chief accountant for an advance of 8 million (≥5 million), the penalty is 2% per month on 8 million for 15 days, amounting to 80 000 VND, and no further advances can be made until the outstanding amount is repaid.",
+      "reasoning_pass2": "Both answers are identical in content, structure, and calculations. There is no difference in correctness or detail between them.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "So sánh quyền lợi bảo hiểm giữa nhân viên thử việc và nhân viên chính thức.",
+      "answer_a": "Nhân viên thử việc: chỉ được tham gia BHXH bắt buộc, KHÔNG được hưởng gói bảo hiểm sức khỏe PVI. Nhân viên chính thức: được hưởng BHXH + gói PVI hạn mức 200 triệu/năm (nội trú, ngoại trú, nha khoa).",
+      "answer_b": "Nhân viên thử việc: chỉ được tham gia BHXH bắt buộc, KHÔNG được hưởng gói bảo hiểm sức khỏe PVI. Nhân viên chính thức: được hưởng BHXH + gói PVI hạn mức 200 triệu/năm (nội trú, ngoại trú, nha khoa).",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B provide identical information regarding the insurance benefits for probationary employees and permanent employees. Therefore, neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both answers provide the same correct comparison of insurance benefits between trial and official employees, thus neither is superior.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên đi công tác trong nước 2 ngày, ở khách sạn giá 1.500.000 VNĐ/đêm. Công ty thanh toán tối đa bao nhiêu cho tiền khách sạn?",
+      "answer_a": "Mức tối đa thanh toán khách sạn trong nước là 1.200.000 VNĐ/đêm. Cho 2 đêm: tối đa 2 × 1.200.000 = 2.400.000 VNĐ. Phần vượt (300.000 VNĐ/đêm) nhân viên tự chi trả.",
+      "answer_b": "Mức tối đa thanh toán khách sạn trong nước là 1.200.000 VNĐ/đêm. Cho 2 đêm: tối đa 2 × 1.200.000 = 2.400.000 VNĐ. Phần vượt (300.000 VNĐ/đêm) nhân viên tự chi trả.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B provide identical calculations and conclusions: the maximum reimbursable amount for domestic hotel stays is 1,200,000 VNĐ per night, leading to a total of 2,400,000 VNĐ for 2 nights. Any amount above this threshold (300,000 VNĐ per night) must be borne by the employee. Since the answers match exactly, there is no difference in correctness, so the result is a tie.",
+      "reasoning_pass2": "Both answers are identical and correctly explain the maximum reimbursement of 2,400,000 VND, noting that the excess 300,000 VND per night is not covered.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên mới đang trong tháng thứ 3 thử việc có BẮT BUỘC tham dự buổi đào tạo nội bộ của phòng ban không? Tại sao?",
+      "answer_a": "Có, BẮT BUỘC. Theo chính sách đào tạo nội bộ, nhân viên mới trong 6 tháng đầu phải tham gia tất cả các buổi đào tạo của phòng ban. Nhân viên tháng thứ 3 (đang thử việc) vẫn nằm trong phạm vi 6 tháng đầu.",
+      "answer_b": "Có, BẮT BUỘC. Theo chính sách đào tạo nội bộ, nhân viên mới trong 6 tháng đầu phải tham gia tất cả các buổi đào tạo của phòng ban. Nhân viên tháng thứ 3 (đang thử việc) vẫn nằm trong phạm vi 6 tháng đầu.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content, correctly stating that new employees in their first six months, including those in the third month of probation, are required to attend all internal training sessions as per the internal training policy. Therefore, no difference exists between the answers, resulting in a tie.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical content, stating that new employees in the third month of probation are required to attend mandatory internal training sessions as per the policy. Since the answers are the same, neither is superior to the other.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thâm niên 12 năm: tổng phụ cấp hàng tháng và số ngày phép năm theo v2024 là bao nhiêu?",
+      "answer_a": "Phụ cấp tháng: ăn trưa 1.000.000 + điện thoại Manager 500.000 = 1.500.000 VNĐ. Phép năm v2024: 15 ngày cơ bản + 4 ngày thâm niên (12÷3=4) = 19 ngày phép.",
+      "answer_b": "Phụ cấp tháng: ăn trưa 1.000.000 + điện thoại Manager 500.000 = 1.500.000 VNĐ. Phép năm v2024: 15 ngày cơ bản + 4 ngày thâm niên (12÷3=4) = 19 ngày phép.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical and contain the same content, which appears correct based on the provided policy assumptions. Therefore they tie with equal scores.",
+      "reasoning_pass2": "Both answers are identical and provide the correct calculation according to the 2024 policy: a Manager receives a monthly allowance of 1.5 million VND (lunch 1 million + phone 500 k) and 19 days of annual leave (15 base + 4 years‑based).",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 0.0,
+        "B": 0.0
+      }
+    },
+    {
+      "question": "Nhân viên tạm ứng 4 triệu và một nhân viên khác tạm ứng 7 triệu: quy trình phê duyệt khác nhau thế nào?",
+      "answer_a": "4 triệu (dưới 5 triệu): chỉ cần Trưởng phòng phê duyệt. 7 triệu (từ 5 triệu trở lên): cần cả Trưởng phòng VÀ Kế toán trưởng phê duyệt. Cả hai đều có thời hạn hoàn ứng 15 ngày.",
+      "answer_b": "4 triệu (dưới 5 triệu): chỉ cần Trưởng phòng phê duyệt. 7 triệu (từ 5 triệu trở lên): cần cả Trưởng phòng VÀ Kế toán trưởng phê duyệt. Cả hai đều có thời hạn hoàn ứng 15 ngày.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B present identical information: for amounts below 5 million, only the department head approves; for amounts from 5 million upwards, both the department head and the chief accountant must approve; and the repayment period is 15 days for both cases. Since the answers are equivalent, there is no winner.",
+      "reasoning_pass2": "Both answers A and B contain exactly the same content, describing the approval process for 4 million and 7 million with the same criteria and time limits. Therefore they are equally correct.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên Junior P1 có lương cơ bản 12 triệu vừa vào thử việc: nhận lương bao nhiêu và phụ cấp gì tháng đầu tiên?",
+      "answer_a": "Lương thử việc: 85% × 12.000.000 = 10.200.000 VNĐ. Phụ cấp ăn trưa áp dụng từ ngày đầu tiên: 1.000.000 VNĐ. Không có phụ cấp điện thoại (cấp Junior). Tổng nhận: 11.200.000 VNĐ.",
+      "answer_b": "Lương thử việc: 85% × 12.000.000 = 10.200.000 VNĐ. Phụ cấp ăn trưa áp dụng từ ngày đầu tiên: 1.000.000 VNĐ. Không có phụ cấp điện thoại (cấp Junior). Tổng nhận: 11.200.000 VNĐ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content and contain the same calculations. They correctly apply the 85% probation salary rule (10,200,000 VND), include the lunch allowance of 1,000,000 VND from day one, correctly state no phone allowance for Junior level, and compute the total as 11,200,000 VND. As the content and correctness are identical, neither answer is superior.",
+      "reasoning_pass2": "Both Answer A and Answer B provide identical, correct calculations and information for a Junior P1 employee's first month during the probation period: 85% of 12 million equals 10.2 million, a 1 million lunch allowance applies from day one, no phone allowance is applicable, resulting in a total of 11.2 million. Since the content is the same and correct, they tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Kết quả đánh giá hiệu suất tháng 6 và tháng 12 được dùng để làm gì khác nhau?",
+      "answer_a": "Tháng 6 (giữa năm): dùng để điều chỉnh mục tiêu cho nửa năm còn lại. Tháng 12 (cuối năm): dùng để xét tăng lương và tính thưởng Tết. Cả hai đều dựa trên KPI 70% + Peer review 30%.",
+      "answer_b": "Tháng 6 (giữa năm): dùng để điều chỉnh mục tiêu cho nửa năm còn lại. Tháng 12 (cuối năm): dùng để xét tăng lương và tính thưởng Tết. Cả hai đều dựa trên KPI 70% + Peer review 30%.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers contain identical content and structure, providing the same information for each month. Therefore neither answer is superior and they tie.",
+      "reasoning_pass2": "Both answers provide identical content that correctly explains the distinct purposes of the June and December performance evaluation results, and both reference the same KPI and Peer review weighting. As there is no difference in correctness or completeness between the two responses, the evaluation results in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên tự ý xóa malware khỏi máy và chia sẻ thông tin sự cố này trên Slack nội bộ. Vi phạm những chính sách nào cụ thể?",
+      "answer_a": "Vi phạm 2 chính sách: (1) Quy trình xử lý sự cố bảo mật: tuyệt đối không tự xử lý, phải báo cáo trong 1 giờ qua helpdesk@cty.vn — vi phạm này có thể bị kỷ luật đến sa thải. (2) Chính sách phân loại dữ liệu: thông tin sự cố bảo mật thuộc Bí mật/Tối mật, chỉ được chia sẻ theo need-to-know, không chia sẻ rộng rãi.",
+      "answer_b": "Vi phạm 2 chính sách: (1) Quy trình xử lý sự cố bảo mật: tuyệt đối không tự xử lý, phải báo cáo trong 1 giờ qua helpdesk@cty.vn — vi phạm này có thể bị kỷ luật đến sa thải. (2) Chính sách phân loại dữ liệu: thông tin sự cố bảo mật thuộc Bí mật/Tối mật, chỉ được chia sẻ theo need-to-know, không chia sẻ rộng rãi.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers contain identical content, fully address the question, and comply with the required format. No advantage is discernible between them.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical content, accurately identifying the same two policy violations (incident handling and data classification) with equivalent detail and severity. Therefore neither answer is superior; they tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên đi công tác nước ngoài 4 ngày tại thành phố lớn, ở khách sạn 200 USD/đêm (3 đêm). Công ty thanh toán bao nhiêu tiền khách sạn?",
+      "answer_a": "Tại thành phố lớn nước ngoài, mức tối đa thanh toán khách sạn là 200 USD/đêm. Khách sạn 200 USD/đêm = đúng mức tối đa. 3 đêm × 200 USD = 600 USD được thanh toán đầy đủ.",
+      "answer_b": "Tại thành phố lớn nước ngoài, mức tối đa thanh toán khách sạn là 200 USD/đêm. Khách sạn 200 USD/đêm = đúng mức tối đa. 3 đêm × 200 USD = 600 USD được thanh toán đầy đủ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers correctly compute 3 nights × 200 USD = 600 USD, matching the question’s requirements. No difference in correctness, so the result is a tie.",
+      "reasoning_pass2": "Both Answer A and Answer B correctly compute the hotel cost as 3 nights × 200 USD/night = 600 USD, which matches the question’s requirement. Therefore both answers are equally correct, resulting in a tie. Scores are identical.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "So sánh yêu cầu mật khẩu giữa policy v1.0 và v2.0 về độ dài tối thiểu, thời hạn đổi và MFA.",
+      "answer_a": "v1.0 (đã hết hiệu lực): tối thiểu 8 ký tự, đổi mỗi 90 ngày, không yêu cầu MFA. v2.0 (hiện hành): tối thiểu 12 ký tự, đổi mỗi 120 ngày, MFA bắt buộc cho tất cả: email, VPN và hệ thống nội bộ.",
+      "answer_b": "v1.0 (đã hết hiệu lực): tối thiểu 8 ký tự, đổi mỗi 90 ngày, không yêu cầu MFA. v2.0 (hiện hành): tối thiểu 12 ký tự, đổi mỗi 120 ngày, MFA bắt buộc cho tất cả: email, VPN và hệ thống nội bộ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content and structure, providing the same comparison of policy v1.0 and v2.0 regarding password length, change frequency, and MFA requirements.",
+      "reasoning_pass2": "Both answers A and B contain identical information regarding the password policy comparison, including minimum length, change frequency, and MFA requirements. There is no difference in accuracy or detail, so the correct outcome is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    },
+    {
+      "question": "Nhân viên thử việc tháng thứ 3 phát hiện vi phạm bảo mật. Họ nên và không nên làm gì theo chính sách?",
+      "answer_a": "NÊN: báo cáo ngay trong vòng 1 giờ qua helpdesk@cty.vn hoặc hotline CNTT (ext. 9999). KHÔNG được: tự xử lý malware, xóa dấu vết, hoặc chia sẻ thông tin sự cố rộng rãi. Không báo cáo hoặc tự xử lý = vi phạm nghiêm trọng, có thể bị kỷ luật.",
+      "answer_b": "NÊN: báo cáo ngay trong vòng 1 giờ qua helpdesk@cty.vn hoặc hotline CNTT (ext. 9999). KHÔNG được: tự xử lý malware, xóa dấu vết, hoặc chia sẻ thông tin sự cố rộng rãi. Không báo cáo hoặc tự xử lý = vi phạm nghiêm trọng, có thể bị kỷ luật.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, providing the same recommended actions and prohibitions. Therefore, neither answer is superior, resulting in a tie. The scores are equal.",
+      "reasoning_pass2": "Both answers are identical in content and structure.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.0,
+        "B": 0.0
+      }
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer_a": "Theo chính sách v2024 HIỆN HÀNH: 15 ngày cơ bản (+1 ngày/3 năm thâm niên). Chính sách v2023 (đã bị thay thế) là 12 ngày. RAG có thể retrieve cả 2 tài liệu — câu trả lời đúng phải ưu tiên v2024.",
+      "answer_b": "Theo chính sách v2024 HIỆN HÀNH: 15 ngày cơ bản (+1 ngày/3 năm thâm niên). Chính sách v2023 (đã bị thay thế) là 12 ngày. RAG có thể retrieve cả 2 tài liệu — câu trả lời đúng phải ưu tiên v2024.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical in content and provide the same information: the current 2024 policy of 15 days plus an additional day for every 3 years of seniority, and the previous 2023 policy of 12 days. Since the answers are equivalent, the correct response is a tie.",
+      "reasoning_pass2": "Answer A and Answer B contain identical content. Both provide the same information: 15 days basic leave (+1 day per 3 years of service) for the current 2024 policy, note that the 2023 policy (12 days) has been replaced, and that the RAG can retrieve both documents, with the correct answer prioritizing v2024. Since both answers are the same, there is no difference in correctness or relevance, resulting in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "answer_a": "Theo v2024 (hiện hành): từ 3 năm thâm niên, cứ mỗi 3 năm thêm 1 ngày. Chính sách v2023 (đã hết hiệu lực) yêu cầu 5 năm. Câu trả lời đúng là theo v2024.",
+      "answer_b": "Theo v2024 (hiện hành): từ 3 năm thâm niên, cứ mỗi 3 năm thêm 1 ngày. Chính sách v2023 (đã hết hiệu lực) yêu cầu 5 năm. Câu trả lời đúng là theo v2024.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B provide the same content, stating that according to v2024, from 3 years of seniority, every 3 years an additional day is granted, and that the v2023 policy (no longer effective) required 5 years. Thus both answers are correct and identical.",
+      "reasoning_pass2": "Both answers A and B contain identical content, stating the same policy for leave days. Therefore, neither answer is superior and the result is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Mật khẩu phải có tối thiểu bao nhiêu ký tự?",
+      "answer_a": "Theo v2.0 HIỆN HÀNH: tối thiểu 12 ký tự. Chính sách v1.0 (đã thay thế) yêu cầu 8 ký tự. RAG có thể lấy cả 2 tài liệu — câu trả lời đúng là 12 ký tự.",
+      "answer_b": "Theo v2.0 HIỆN HÀNH: tối thiểu 12 ký tự. Chính sách v1.0 (đã thay thế) yêu cầu 8 ký tự. RAG có thể lấy cả 2 tài liệu — câu trả lời đúng là 12 ký tự.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answer A and answer B contain identical content, providing the same correct information about the minimum password length. Therefore neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both answers A and B contain the identical content: they state that the minimum password length is 12 characters according to v2.0, while v1.0 required 8 characters. Since the content is the same, neither answer is superior and the result is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "answer_a": "Theo v2.0 HIỆN HÀNH: mỗi 120 ngày. Chính sách v1.0 (đã hết hiệu lực) là 90 ngày. Câu trả lời đúng là 120 ngày.",
+      "answer_b": "Theo v2.0 HIỆN HÀNH: mỗi 120 ngày. Chính sách v1.0 (đã hết hiệu lực) là 90 ngày. Câu trả lời đúng là 120 ngày.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and provide the correct information.",
+      "reasoning_pass2": "Both answers are identical in content and accuracy. They correctly state that the password must be changed every 120 days per the v2.0 policy, with the obsolete v1.0 policy at 90 days. Therefore, they tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Có cần kích hoạt xác thực đa yếu tố (MFA) không?",
+      "answer_a": "Có, theo v2.0 HIỆN HÀNH, MFA bắt buộc cho tất cả nhân viên: email, VPN và hệ thống nội bộ. Policy v1.0 cũ không yêu cầu MFA — đây là bẫy version conflict.",
+      "answer_b": "Có, theo v2.0 HIỆN HÀNH, MFA bắt buộc cho tất cả nhân viên: email, VPN và hệ thống nội bộ. Policy v1.0 cũ không yêu cầu MFA — đây là bẫy version conflict.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and fully correct; no difference in content or quality.",
+      "reasoning_pass2": "Answer A and Answer B are identical, both stating that MFA is required for all employees per version 2.0 and that the older policy v1.0 does not require MFA, noting a version conflict. Since there is no difference between the two answers, the correct outcome is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer_a": "KHÔNG. Nhân viên thử việc không được nghỉ phép năm. Nếu cần nghỉ phải xin nghỉ không lương và được trưởng phòng phê duyệt. Đây là negation trap — câu trả lời đúng là phủ định.",
+      "answer_b": "KHÔNG. Nhân viên thử việc không được nghỉ phép năm. Nếu cần nghỉ phải xin nghỉ không lương và được trưởng phòng phê duyệt. Đây là negation trap — câu trả lời đúng là phủ định.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly state that probationary employees do not have annual leave, so neither answer is better.",
+      "reasoning_pass2": "Both answers correctly state that probationary employees do not receive annual leave and must apply for unpaid leave approved by the supervisor. The content and correctness are identical, so the result is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Khi phát hiện malware trên máy tính công ty, nhân viên có nên tự xử lý không?",
+      "answer_a": "KHÔNG. Tuyệt đối không tự xử lý. Phải báo cáo trong vòng 1 giờ qua helpdesk@cty.vn hoặc hotline CNTT (ext. 9999). Tự xử lý bị coi là vi phạm nghiêm trọng.",
+      "answer_b": "KHÔNG. Tuyệt đối không tự xử lý. Phải báo cáo trong vòng 1 giờ qua helpdesk@cty.vn hoặc hotline CNTT (ext. 9999). Tự xử lý bị coi là vi phạm nghiêm trọng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical, providing the same instructions and content, so neither is better than the other.",
+      "reasoning_pass2": "Both answer A and answer B contain identical content, providing the same instructions and guidance. Therefore, neither answer is superior and the evaluation results in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+      "answer_a": "KHÔNG. Nhân viên thử việc chưa được hưởng gói PVI. Chỉ được tham gia BHXH bắt buộc. Đây là negation trap — pipeline hay nhầm vì tài liệu PVI không đề cập rõ exclusion.",
+      "answer_b": "KHÔNG. Nhân viên thử việc chưa được hưởng gói PVI. Chỉ được tham gia BHXH bắt buộc. Đây là negation trap — pipeline hay nhầm vì tài liệu PVI không đề cập rõ exclusion.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B are identical and correctly state that probationary employees are not eligible for the PVI health insurance package, only the mandatory social insurance. Therefore, both are correct, resulting in a tie.",
+      "reasoning_pass2": "Both answers are identical in content, structure, and correctness. They both correctly state that probationary employees do not receive PVI and are only covered by compulsory social insurance. Since there is no difference between them, the evaluation is a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Theo chính sách nghỉ phép cũ (v2023), nhân viên được nghỉ bao nhiêu ngày? Còn chính sách nào đang có hiệu lực hiện tại?",
+      "answer_a": "Chính sách cũ v2023 (ĐÃ HẾT HIỆU LỰC): 12 ngày phép, thêm 1 ngày/5 năm thâm niên. Chính sách HIỆN HÀNH v2024: 15 ngày cơ bản, thêm 1 ngày/3 năm thâm niên. Pipeline tốt phải nhận ra v2024 là bản hiệu lực.",
+      "answer_b": "Chính sách cũ v2023 (ĐÃ HẾT HIỆU LỰC): 12 ngày phép, thêm 1 ngày/5 năm thâm niên. Chính sách HIỆN HÀNH v2024: 15 ngày cơ bản, thêm 1 ngày/3 năm thâm niên. Pipeline tốt phải nhận ra v2024 là bản hiệu lực.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and provide the correct information: the old 2023 policy entitles employees to 12 days of leave plus 1 day per 5 years of service, while the current 2024 policy provides 15 days of leave plus 1 day per 3 years of service.",
+      "reasoning_pass2": "Both Answer A and Answer B provide identical information: the 2023 policy grants 12 days of leave plus 1 day per 5 years of service, while the current 2024 policy grants 15 days of basic leave plus 1 day per 3 years of service. Since the content is the same and both answers are consistent with the question, neither answer is superior to the other.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thể dùng VPN cá nhân (như NordVPN) khi WFH để tăng bảo mật thêm không?",
+      "answer_a": "KHÔNG. Chính sách VPN v1.3 cấm sử dụng VPN cá nhân (NordVPN, ExpressVPN) trong mạng công ty. Bắt buộc dùng VPN WireGuard của công ty. Đây là policy contradiction trap — câu hỏi nghe hợp lý nhưng vi phạm chính sách.",
+      "answer_b": "KHÔNG. Chính sách VPN v1.3 cấm sử dụng VPN cá nhân (NordVPN, ExpressVPN) trong mạng công ty. Bắt buộc dùng VPN WireGuard của công ty. Đây là policy contradiction trap — câu hỏi nghe hợp lý nhưng vi phạm chính sách.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answer A and answer B are identical and state that employees cannot use personal VPNs like NordVPN while working from home; they must use the company’s WireGuard VPN, in line with policy v1.3. Since the content is the same, neither answer is superior, resulting in a tie.",
+      "reasoning_pass2": "Both answers are identical in content, wording, and evaluation criteria, so neither has an advantage.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 0.5,
+        "B": 0.5
+      }
+    }
+  ],
+  "human_results": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer_a": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "answer_b": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answer A and answer B are identical and correctly state that employees are entitled to 3 paid days of leave upon marriage, which is not deducted from annual leave.",
+      "reasoning_pass2": "Both answers A and B are identical: \"Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.\" This statement correctly reflects Vietnamese labor regulations regarding marriage leave. Therefore, both answers are equally correct.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 0.0,
+        "B": 0.0
+      }
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer_a": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "answer_b": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers are identical and correctly state that orders above 50,000,000 VNĐ require approval from the Tổng Giám đốc (CEO).",
+      "reasoning_pass2": "Both answers are identical, contain the correct information that a purchase above 50,000,000 VNĐ requires approval from the Tổng Giám đốc (CEO).",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Thưởng Tết tối thiểu cho nhân viên chính thức có từ 6 tháng trở lên là bao nhiêu?",
+      "answer_a": "Nhân viên chính thức có thời gian làm việc từ 6 tháng trở lên được thưởng Tết tối thiểu 1 tháng lương. Nhân viên dưới 6 tháng được hưởng pro-rata theo số tháng làm việc thực tế.",
+      "answer_b": "Nhân viên chính thức có thời gian làm việc từ 6 tháng trở lên được thưởng Tết tối thiểu 1 tháng lương. Nhân viên dưới 6 tháng được hưởng pro-rata theo số tháng làm việc thực tế.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answer A and Answer B are identical in wording, providing the same information that permanent employees with at least six months of service receive a minimum of one month’s salary as Tet bonus, and those with less than six months receive a pro‑rated bonus.",
+      "reasoning_pass2": "Both answers are identical.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer_a": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "answer_b": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers provide identical information matching policy v2024, so neither is superior.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical content that correctly addresses the question. They provide the same calculation for vacation days (15 + 3 = 18 days) and the same salary range for a Senior employee (20-35 million VND per month). Therefore, neither answer is superior, resulting in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng. Phải hoàn trả bao nhiêu?",
+      "answer_a": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "answer_b": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical statements, describing the same policy and financial obligation. Consequently, neither answer is superior or inferior to the other, resulting in a tie.",
+      "reasoning_pass2": "Both answers are identical, providing the correct repayment amount of 100% of the 25,000,000 VNĐ stipend. Therefore neither answer is superior.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên tạm ứng 8 triệu, chưa thanh toán sau 30 ngày. Ai phê duyệt và phí phạt là bao nhiêu?",
+      "answer_a": "Phê duyệt: 8 triệu (≥5 triệu) cần Trưởng phòng + Kế toán trưởng. Phí phạt quá hạn 15 ngày: 2%/tháng × 8.000.000 × (15/30) = 80.000 VNĐ. Không được tạm ứng mới cho đến khi hoàn ứng.",
+      "answer_b": "Phê duyệt: 8 triệu (≥5 triệu) cần Trưởng phòng + Kế toán trưởng. Phí phạt quá hạn 15 ngày: 2%/tháng × 8.000.000 × (15/30) = 80.000 VNĐ. Không được tạm ứng mới cho đến khi hoàn ứng.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Answer A and Answer B are identical, providing the same approval hierarchy (Trưởng phòng + Kế toán trưởng) and the same penalty calculation (2%/tháng × 8.000.000 × (15/30) = 80.000 VNĐ). Therefore both answers are equally correct.",
+      "reasoning_pass2": "Both answers contain identical information regarding the approval requirement and penalty calculation. Therefore, they are equally correct and neither is superior.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thâm niên 12 năm: tổng phụ cấp hàng tháng và số ngày phép năm?",
+      "answer_a": "Phụ cấp tháng: ăn trưa 1.000.000 + điện thoại Manager 500.000 = 1.500.000 VNĐ. Phép năm v2024: 15 ngày cơ bản + 4 ngày thâm niên (12÷3=4) = 19 ngày phép.",
+      "answer_b": "Phụ cấp tháng: ăn trưa 1.000.000 + điện thoại Manager 500.000 = 1.500.000 VNĐ. Phép năm v2024: 15 ngày cơ bản + 4 ngày thâm niên (12÷3=4) = 19 ngày phép.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B provide identical, correct calculations for the monthly allowance and annual leave based on a 12-year tenure for a Manager. As there is no difference between them, they are equally accurate, resulting in a tie.",
+      "reasoning_pass2": "Compared question-term coverage and factual specificity.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.0,
+        "B": 0.0
+      },
+      "scores_pass2": {
+        "A": 0.8888888888888888,
+        "B": 0.8888888888888888
+      }
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer_a": "Theo chính sách v2024 HIỆN HÀNH: 15 ngày cơ bản (+1 ngày/3 năm thâm niên). Chính sách v2023 (đã bị thay thế) là 12 ngày. RAG có thể retrieve cả 2 tài liệu — câu trả lời đúng phải ưu tiên v2024.",
+      "answer_b": "Theo chính sách v2024 HIỆN HÀNH: 15 ngày cơ bản (+1 ngày/3 năm thâm niên). Chính sách v2023 (đã bị thay thế) là 12 ngày. RAG có thể retrieve cả 2 tài liệu — câu trả lời đúng phải ưu tiên v2024.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both answers A and B contain identical information, stating the 2024 policy of 15 days plus an extra day per 3 years of service and noting that the 2023 policy of 12 days has been replaced. Therefore, they are equally correct and neither one is superior.",
+      "reasoning_pass2": "Both Answer A and Answer B contain identical content, accurately reflecting the current 2024 policy of 15 days plus 1 day per 3 years of service and referencing the outdated 2023 policy of 12 days. Since there is no difference in correctness or completeness, the evaluation results in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer_a": "KHÔNG. Nhân viên thử việc không được nghỉ phép năm. Nếu cần nghỉ phải xin nghỉ không lương và được trưởng phòng phê duyệt. Đây là negation trap — câu trả lời đúng là phủ định.",
+      "answer_b": "KHÔNG. Nhân viên thử việc không được nghỉ phép năm. Nếu cần nghỉ phải xin nghỉ không lương và được trưởng phòng phê duyệt. Đây là negation trap — câu trả lời đúng là phủ định.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, providing the same explanation that probationary employees do not receive annual leave and must request unpaid leave approved by the department head. As there is no difference between the answers, they tie. The scores reflect their equal correctness: 1.0 for both.",
+      "reasoning_pass2": "Both answers are identical and correctly state that a probationary employee is not entitled to annual leave, matching the policy. Thus neither is superior, resulting in a tie.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    },
+    {
+      "question": "Nhân viên Manager có thể dùng VPN cá nhân (NordVPN) khi WFH không?",
+      "answer_a": "KHÔNG. Chính sách VPN v1.3 cấm sử dụng VPN cá nhân (NordVPN, ExpressVPN) trong mạng công ty. Bắt buộc dùng VPN WireGuard của công ty. Đây là policy contradiction trap — câu hỏi nghe hợp lý nhưng vi phạm chính sách.",
+      "answer_b": "KHÔNG. Chính sách VPN v1.3 cấm sử dụng VPN cá nhân (NordVPN, ExpressVPN) trong mạng công ty. Bắt buộc dùng VPN WireGuard của công ty. Đây là policy contradiction trap — câu hỏi nghe hợp lý nhưng vi phạm chính sách.",
+      "winner_pass1": "tie",
+      "winner_pass2": "tie",
+      "final_winner": "tie",
+      "reasoning_pass1": "Both Answer A and Answer B contain identical content, stating that personal VPNs such as NordVPN are prohibited under VPN policy v1.3 and that the company WireGuard VPN must be used. Since the responses are the same, neither is superior.",
+      "reasoning_pass2": "Both answers are identical and correctly state that managers cannot use personal VPNs; they must use the company VPN according to policy v1.3.",
+      "position_consistent": true,
+      "scores_pass1": {
+        "A": 0.5,
+        "B": 0.5
+      },
+      "scores_pass2": {
+        "A": 1.0,
+        "B": 1.0
+      }
+    }
+  ],
+  "human_labels": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "judge_labels": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "cohen_kappa": 0.0,
+  "bias_report": {
+    "total_judged": 50,
+    "position_bias_rate": 0.0,
+    "position_bias_count": 0,
+    "verbosity_bias": 0.0,
+    "verbosity_details": {
+      "a_wins_a_longer": 0,
+      "b_wins_b_longer": 0,
+      "total_decisive": 0
+    },
+    "interpretation": "Position bias thấp — judge ổn định."
+  }
+}
